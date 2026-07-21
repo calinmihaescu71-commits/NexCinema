@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <!-- Fundalul inchis (rotunjit) -->
+    <rect width="100" height="100" rx="22" fill="#0d0d0d"/>
+    
+    <!-- Litera N stilizata cu mov -->
+    <path d="M 28 72 V 28 L 72 72 V 28" 
+          stroke="#7b61ff" 
+          stroke-width="12" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          fill="none"/>
+</svg>
