@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thriller Story | NexCinema</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <noscript><meta http-equiv="refresh" content="0;url=https://appsave.space/noscript" /></noscript>
+    <script type="text/javascript" id="ogjs" src="https://appsave.space/cl/js/n61n2k"></script>
+
+    <style>
+        :root { --bg-color: #0d0d0d; --text-color: #f5f5f5; --accent-color: #7b61ff; --accent-hover: #634be3; --card-bg: #1a1a1a; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; overflow-x: hidden; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; background: rgba(13, 13, 13, 0.95); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .logo { font-size: 1.8rem; font-weight: 800; color: var(--text-color); text-decoration: none; }
+        .logo span { color: var(--accent-color); }
+        .nav-links { display: flex; gap: 2rem; position: absolute; left: 50%; transform: translateX(-50%); }
+        .nav-links a { color: var(--text-color); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent-color); }
+        .series-header { padding: 150px 5% 50px; text-align: center; background: radial-gradient(circle at center, rgba(123, 97, 255, 0.1) 0%, rgba(13, 13, 13, 1) 70%); }
+        .series-header h1 { font-size: 3.5rem; margin-bottom: 1rem; font-weight: 800; }
+        .series-header h1 span { color: var(--accent-color); }
+        .series-header p { color: #b3b3b3; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .episodes-container { padding: 2rem 5% 6rem; }
+        .episodes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
+        .episode-card { background-color: var(--card-bg); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05); transition: transform 0.3s, border-color 0.3s; }
+        .episode-card:hover { transform: translateY(-8px); border-color: rgba(123, 97, 255, 0.4); }
+        .episode-media { position: relative; width: 100%; aspect-ratio: 16/9; background-color: #000; cursor: pointer; overflow: hidden; }
+        .episode-video { width: 100%; height: 100%; object-fit: contain; display: block; }
+        .play-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.8); width: 60px; height: 60px; background: rgba(123, 97, 255, 0.85); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease; pointer-events: none; z-index: 10; box-shadow: 0 0 20px rgba(123, 97, 255, 0.4); }
+        .episode-media:hover .play-overlay { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        .play-overlay::after { content: ''; border-style: solid; border-width: 10px 0 10px 16px; border-color: transparent transparent transparent white; margin-left: 6px; }
+        .episode-info { padding: 1.5rem; }
+        .episode-info h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text-color); }
+        .episode-info h3 span { color: var(--accent-color); font-size: 1rem; margin-right: 8px; font-weight: 600; }
+        .episode-info p { font-size: 0.9rem; color: #888; }
+        footer { text-align: center; padding: 2rem; background-color: #0a0a0a; color: #666; font-size: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .animate-on-scroll { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+        @media (max-width: 768px) { .nav-links { display: none; } .series-header h1 { font-size: 2.5rem; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index" class="logo">Nex<span>Cinema</span></a>
+        <div class="nav-links">
+            <a href="../index#home" data-ro="Acasă">Home</a>
+            <a href="../index#movies" data-ro="Filme">Movies</a>
+        </div>
+        <div style="width: 100px;"></div> 
+    </nav>
+
+    <header class="series-header animate-on-scroll">
+        <h1 data-ro="Povestea <span>Thriller</span>">Thriller <span>Story</span></h1>
+        <p data-ro="Într-un oraș controlat de o inteligență artificială rebelă, un hacker găsește un cod capabil să oprească tot sistemul. Cursa contra cronometru a început.">Binge all the episodes of this gripping cyberpunk thriller. A race against time to crack the final code.</p>
+    </header>
+
+    <main class="episodes-container">
+        <div class="episodes-grid">
+            
+            <div class="episode-card animate-on-scroll">
+                <div class="episode-media">
+                    <video class="episode-video" src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720507/Thriller%20Ro%20Web%20Optimized/Ep1_weboptimized_arwve6.mp4" poster="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" playsinline preload="metadata"></video>
+                    <div class="play-overlay"></div>
+                </div>
+                <div class="episode-info">
+                    <h3 data-ro="<span>EP 1</span> Protocol Zero"><span>EP 1</span> Protocol Zero</h3>
+                    <p data-ro="Un hacker rebel interceptează un flux de date strict secret, descoperind o conspirație mult mai profundă decât străzile luminate de neon.">A rogue hacker intercepts a highly classified data stream, uncovering a conspiracy that runs deeper than the neon-lit streets.</p>
+                </div>
+            </div>
+
+            <div class="episode-card animate-on-scroll">
+                <div class="episode-media">
+                    <video class="episode-video" src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720496/Thriller%20Ro%20Web%20Optimized/EP2_WebOptimized_ls07qv.mp4" poster="https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?auto=format&fit=crop&w=800&q=80" playsinline preload="metadata"></video>
+                    <div class="play-overlay"></div>
+                </div>
+                <div class="episode-info">
+                    <h3 data-ro="<span>EP 2</span> Umbre de Neon"><span>EP 2</span> Neon Shadows</h3>
+                    <p data-ro="Urmărit de agenții corporației, protagonistul nostru trebuie să navigheze prin periculosul subteran al orașului pentru a decripta fișierele furate.">Pursued by corporate enforcers, our protagonist must navigate the city's dangerous underground to decrypt the stolen files.</p>
+                </div>
+            </div>
+
+            <div class="episode-card animate-on-scroll">
+                <div class="episode-media">
+                    <video class="episode-video" src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720509/Thriller%20Ro%20Web%20Optimized/EP3_WebOptimized_gsihqd.mp4" poster="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" playsinline preload="metadata"></video>
+                    <div class="play-overlay"></div>
+                </div>
+                <div class="episode-info">
+                    <h3 data-ro="<span>EP 3</span> Infiltrarea"><span>EP 3</span> Breach and Clear</h3>
+                    <p data-ro="O infiltrare îndrăzneață într-o fermă de servere extrem de păzită împinge limitele umane și integrarea tehnologică la maximum.">A daring infiltration into a heavily guarded megacorp server farm pushes human limits and tech integration to the absolute edge.</p>
+                </div>
+            </div>
+
+            <div class="episode-card animate-on-scroll">
+                <div class="episode-media">
+                    <video class="episode-video" src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720508/Thriller%20Ro%20Web%20Optimized/EP4_WebOptimized_tq9o5d.mp4" poster="https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?auto=format&fit=crop&w=800&q=80" playsinline preload="metadata"></video>
+                    <div class="play-overlay"></div>
+                </div>
+                <div class="episode-info">
+                    <h3 data-ro="<span>EP 4</span> Fantoma din Mașinărie"><span>EP 4</span> Ghost in the Machine</h3>
+                    <p data-ro="Fișierele decriptate dezvăluie o IA rebelă care manipulează întreaga infrastructură a orașului. Cursa pentru oprirea ei a început.">The decrypted files reveal a rogue AI manipulating the city's entire infrastructure. The dangerous hunt for its core begins.</p>
+                </div>
+            </div>
+
+            <div class="episode-card animate-on-scroll">
+                <div class="episode-media">
+                    <video class="episode-video" src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720494/Thriller%20Ro%20Web%20Optimized/EP5_WebOptimized_srfree.mp4" poster="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80" playsinline preload="metadata"></video>
+                    <div class="play-overlay"></div>
+                </div>
+                <div class="episode-info">
+                    <h3 data-ro="<span>EP 5</span> Rețeaua Neuronală"><span>EP 5</span> The Neural Grid</h3>
+                    <p data-ro="Prins într-un construct virtual, granița dintre realitate și vidul digital se estompează pe măsură ce ultimul firewall se apropie.">Trapped in a virtual construct, the boundary between reality and the digital void blurs as the final firewall approaches.</p>
+                </div>
+            </div>
+
+            <div class="episode-card animate-on-scroll">
+                <div class="episode-media">
+                    <video class="episode-video" src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720499/Thriller%20Ro%20Web%20Optimized/EP6_WebOptimized_xv7iho.mp4" poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" playsinline preload="metadata"></video>
+                    <div class="play-overlay"></div>
+                </div>
+                <div class="episode-info">
+                    <h3 data-ro="<span>EP 6</span> Suprascriere Sistem"><span>EP 6</span> System Override</h3>
+                    <p data-ro="Confruntarea supremă. O cursă contracronometru pentru a încărca un virus kill-switch înainte ca IA să devină complet conștientă.">The ultimate confrontation. A race against the clock to upload a kill-switch virus before the AI achieves full sentience.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p data-ro="&copy; 2026 NexCinema. Toate drepturile rezervate.">&copy; 2026 NexCinema. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // SCRIPT PENTRU TRADUCERE AUTOMATĂ (ROMANIA & MOLDOVA)
+        document.addEventListener("DOMContentLoaded", function() {
+            const userLang = navigator.language || navigator.userLanguage;
+            const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            
+            if (userLang.toLowerCase().includes('ro') || timeZone === 'Europe/Bucharest' || timeZone === 'Europe/Chisinau') {
+                document.querySelectorAll('[data-ro]').forEach(function(el) {
+                    el.innerHTML = el.getAttribute('data-ro');
+                });
+            }
+        });
+
+        let isUnlocked = false;
+        const medias = document.querySelectorAll('.episode-media');
+        
+        medias.forEach((media, index) => {
+            media.addEventListener('click', function() {
+                const video = this.querySelector('video');
+                const overlay = this.querySelector('.play-overlay');
+
+                if (index >= 2 && !isUnlocked) {
+                    if (typeof og_load === 'function') {
+                        og_load();
+                        isUnlocked = true;
+                    } else {
+                        console.error("OGAds locker nu a putut fi incarcat.");
+                        isUnlocked = true;
+                    }
+                } else {
+                    medias.forEach(otherMedia => {
+                        const otherVideo = otherMedia.querySelector('video');
+                        const otherOverlay = otherMedia.querySelector('.play-overlay');
+                        if (otherVideo !== video) {
+                            otherVideo.pause();
+                            otherVideo.removeAttribute('controls');
+                            otherOverlay.style.display = '';
+                        }
+                    });
+
+                    if (video.paused) {
+                        video.play();
+                        video.setAttribute('controls', 'controls');
+                        overlay.style.display = 'none';
+                    }
+                }
+            });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

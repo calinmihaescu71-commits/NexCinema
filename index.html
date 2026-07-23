@@ -4,57 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NexCinema | The Future of Cinema</title>
-    
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-
     <style>
         :root { --bg-color: #0d0d0d; --text-color: #f5f5f5; --accent-color: #7b61ff; --accent-hover: #634be3; --card-bg: #1a1a1a; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; overflow-x: hidden; }
-
         nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; background: rgba(13, 13, 13, 0.95); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; }
         .logo { font-size: 1.8rem; font-weight: 800; color: var(--text-color); text-decoration: none; letter-spacing: 1px; }
         .logo span { color: var(--accent-color); }
         .nav-links { display: flex; gap: 2rem; position: absolute; left: 50%; transform: translateX(-50%); }
         .nav-links a { color: var(--text-color); text-decoration: none; font-size: 0.95rem; transition: color 0.3s ease; }
         .nav-links a:hover { color: var(--accent-color); }
-
         #home { padding-top: 80px; min-height: 100vh; display: flex; align-items: center; }
         .hero-slider { width: 100%; max-width: 1400px; margin: 0 auto; }
         .hero-slide { outline: none; }
         .hero-layout { display: flex; align-items: center; justify-content: space-between; gap: 4rem; padding: 2rem 5%; }
-        
         .hero-media { flex: 1; position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); max-width: 600px; background: #000; cursor: pointer; }
         .hero-media video { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
-        
         .play-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.8); width: 70px; height: 70px; background: rgba(123, 97, 255, 0.85); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease; z-index: 10; pointer-events: none; box-shadow: 0 0 20px rgba(123, 97, 255, 0.4); }
         .hero-media:hover .play-overlay { opacity: 1; transform: translate(-50%, -50%) scale(1); }
         .play-overlay::after { content: ''; border-style: solid; border-width: 12px 0 12px 18px; border-color: transparent transparent transparent white; margin-left: 6px; }
-
         .hero-content { flex: 1; max-width: 600px; }
         .hero-content h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; font-weight: 800; }
         .hero-content h1 span { color: var(--accent-color); }
         .hero-content p { font-size: 1.1rem; color: #b3b3b3; margin-bottom: 2rem; }
         .btn { display: inline-block; padding: 0.8rem 2rem; background-color: var(--accent-color); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; border: none; cursor: pointer; }
         .btn:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
-
         .slick-dots { bottom: -40px; text-align: center; }
         .slick-dots li { margin: 0 4px; }
         .slick-dots li button:before { color: #444; font-size: 14px; opacity: 1; }
         .slick-dots li.slick-active button:before { color: var(--accent-color); opacity: 1; }
-
         .section-padding { padding: 6rem 5%; }
         .section-title { font-size: 2.2rem; margin-bottom: 3rem; border-left: 4px solid var(--accent-color); padding-left: 1rem; font-weight: 700; }
-
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .feature-card { background-color: var(--card-bg); padding: 2.5rem; border-radius: 15px; text-align: center; transition: transform 0.3s ease; }
         .feature-card:hover { transform: translateY(-10px); }
         .feature-icon { font-size: 3rem; margin-bottom: 1rem; display: inline-block; }
         .feature-title { font-size: 1.3rem; margin-bottom: 1rem; color: var(--accent-color); }
-
         .movie-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
         .movie-card { background-color: var(--card-bg); border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, border-color 0.3s ease; text-decoration: none; display: block; border: 1px solid rgba(255, 255, 255, 0.05); }
         .movie-card:hover { transform: translateY(-8px); border-color: rgba(123, 97, 255, 0.4); }
@@ -64,7 +52,6 @@
         .movie-info { padding: 1.2rem; }
         .movie-title { font-size: 1.2rem; margin-bottom: 0.3rem; color: var(--text-color); font-weight: 700; }
         .movie-genre { color: var(--accent-color); font-size: 0.85rem; }
-
         .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .testimonial-card { background-color: var(--card-bg); padding: 2rem; border-radius: 15px; position: relative; border: 1px solid rgba(255, 255, 255, 0.05); }
         .quote-icon { font-size: 4rem; color: rgba(123, 97, 255, 0.1); position: absolute; top: 10px; right: 20px; }
@@ -73,7 +60,6 @@
         .client-avatar { width: 60px; height: 60px; border-radius: 50%; background-color: #2a2a2a; object-fit: cover; border: 2px solid var(--accent-color); }
         .client-details h4 { font-size: 1rem; margin-bottom: 0.2rem; }
         .client-details p { font-size: 0.8rem; color: var(--accent-color); }
-
         .modern-footer { background-color: #050505; padding: 4rem 5% 2rem; border-top: 1px solid #1a1a1a; margin-top: 4rem; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
         .footer-brand p { color: #737373; margin-top: 1rem; max-width: 300px; }
@@ -81,28 +67,28 @@
         .footer-links a, .footer-social a { display: block; color: #737373; text-decoration: none; margin-bottom: 0.8rem; transition: color 0.3s ease; }
         .footer-links a:hover, .footer-social a:hover { color: var(--accent-color); padding-left: 5px; }
         .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid #1a1a1a; color: #404040; font-size: 0.9rem; }
-
         .animate-on-scroll { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
-
         @media (max-width: 968px) { .hero-layout { flex-direction: column; text-align: center; gap: 2rem; } .hero-content h1 { font-size: 2.5rem; } .nav-links { display: none; } }
     </style>
 </head>
 <body>
 
+    <!-- Meniul curatat complet -->
     <nav>
-        <a href="#" class="logo">Nex<span>Cinema</span></a>
+        <a href="/" class="logo">Nex<span>Cinema</span></a>
         <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#features">Features</a>
-            <a href="#movies">Movies</a>
-            <a href="#testimonials">Reviews</a>
+            <a href="/#home" data-ro="Acasă">Home</a>
+            <a href="/#features" data-ro="Detalii">Features</a>
+            <a href="/#movies" data-ro="Filme">Movies</a>
+            <a href="/#testimonials" data-ro="Recenzii">Reviews</a>
         </div>
         <div style="width: 100px;"></div> 
     </nav>
 
     <header id="home">
         <div class="hero-slider">
+            <!-- Blood Story -->
             <div class="hero-slide">
                 <div class="hero-layout">
                     <div class="hero-media animate-on-scroll">
@@ -110,13 +96,14 @@
                         <div class="play-overlay"></div>
                     </div>
                     <div class="hero-content animate-on-scroll">
-                        <h1>Blood <span>Story</span></h1>
-                        <p>A rogue agent uncovers a brutal conspiracy that runs through the very veins of a dystopian metropolis. The ultimate fight for survival begins in the shadows.</p>
-                        <a href="Pages/BloodStory.html" class="btn">Watch Full Series</a>
+                        <h1 data-ro="Sânge de <span>Înger</span>">Blood <span>Story</span></h1>
+                        <p data-ro="O salvare miraculoasă se transformă într-o colivie de aur. Până unde merge obsesia și câte vieți trebuie să trăiești pentru a realiza că ești prizonieră? 🩸✨">A miraculous rescue turns into a golden cage. How far does obsession go and how many lives must you live to realize you're a prisoner? 🩸✨</p>
+                        <a href="Stories/BloodStory" class="btn" data-ro="Urmărește Seria">Watch Full Series</a>
                     </div>
                 </div>
             </div>
 
+            <!-- Security Camera -->
             <div class="hero-slide">
                 <div class="hero-layout">
                     <div class="hero-media animate-on-scroll">
@@ -124,13 +111,14 @@
                         <div class="play-overlay"></div>
                     </div>
                     <div class="hero-content animate-on-scroll">
-                        <h1>Security <span>Camera</span></h1>
-                        <p>Every angle is watched. When a late-night security guard spots a terrifying anomaly on camera 4, he is dragged into a reality he cannot escape.</p>
-                        <a href="Pages/SecurityCamera.html" class="btn">Watch Full Series</a>
+                        <h1 data-ro="Tura de <span>Noapte</span>">Security <span>Camera</span></h1>
+                        <p data-ro="Un salariu de 10.000€ pentru a păzi un buncăr gol. Singura condiție? Respectă manualul de reguli la virgulă, altfel nu apuci dimineața. 👁️🚪">A $10,000 salary to guard an empty bunker. The only condition? Follow the rulebook strictly, or you won't make it to morning. 👁️🚪</p>
+                        <a href="Stories/SecurityCamera" class="btn" data-ro="Urmărește Seria">Watch Full Series</a>
                     </div>
                 </div>
             </div>
 
+            <!-- Thriller Story -->
             <div class="hero-slide">
                 <div class="hero-layout">
                     <div class="hero-media animate-on-scroll">
@@ -138,9 +126,9 @@
                         <div class="play-overlay"></div>
                     </div>
                     <div class="hero-content animate-on-scroll">
-                        <h1>Thriller <span>Story</span></h1>
-                        <p>In a city controlled by a rogue AI, one hacker finds a legacy code capable of shutting down the entire system. The global race against time has officially started.</p>
-                        <a href="Pages/ThrillerStory.html" class="btn">Watch Full Series</a>
+                        <h1 data-ro="Povestea <span>Thriller</span>">Thriller <span>Story</span></h1>
+                        <p data-ro="Într-un oraș controlat de o inteligență artificială rebelă, un hacker găsește un cod capabil să oprească tot sistemul. Cursa contra cronometru a început.">In a city controlled by a rogue AI, one hacker finds a legacy code capable of shutting down the entire system. The global race against time has officially started.</p>
+                        <a href="Stories/ThrillerStory" class="btn" data-ro="Urmărește Seria">Watch Full Series</a>
                     </div>
                 </div>
             </div>
@@ -148,85 +136,83 @@
     </header>
 
     <section class="section-padding" id="features">
-        <h2 class="section-title animate-on-scroll">Why Choose NexCinema</h2>
+        <h2 class="section-title animate-on-scroll" data-ro="De ce să alegi NexCinema">Why Choose NexCinema</h2>
         <div class="features-grid">
             <div class="feature-card animate-on-scroll">
-                <span class="feature-icon">✨</span><h3 class="feature-title">4K Generation</h3>
-                <p>Experience crystal clear resolution with every frame generated by our advanced neural networks.</p>
+                <span class="feature-icon">✨</span><h3 class="feature-title" data-ro="Generare 4K">4K Generation</h3>
+                <p data-ro="Experimentează o rezoluție de cristal cu fiecare cadru generat de rețelele noastre neuronale avansate.">Experience crystal clear resolution with every frame generated by our advanced neural networks.</p>
             </div>
             <div class="feature-card animate-on-scroll">
-                <span class="feature-icon">🚀</span><h3 class="feature-title">Daily Releases</h3>
-                <p>Our algorithms work 24/7 to bring you fresh, unique content every single day.</p>
+                <span class="feature-icon">🚀</span><h3 class="feature-title" data-ro="Lansări Zilnice">Daily Releases</h3>
+                <p data-ro="Algoritmii noștri lucrează 24/7 pentru a-ți aduce conținut nou și unic în fiecare zi.">Our algorithms work 24/7 to bring you fresh, unique content every single day.</p>
             </div>
             <div class="feature-card animate-on-scroll">
-                <span class="feature-icon">🎭</span><h3 class="feature-title">Infinite Genres</h3>
-                <p>From hyper-realistic sci-fi to abstract dramas, explore genres that push the boundaries of imagination.</p>
+                <span class="feature-icon">🎭</span><h3 class="feature-title" data-ro="Genuri Infinite">Infinite Genres</h3>
+                <p data-ro="De la sci-fi hiper-realist la drame abstracte, explorează genuri care împing limitele imaginației.">From hyper-realistic sci-fi to abstract dramas, explore genres that push the boundaries of imagination.</p>
             </div>
         </div>
     </section>
 
     <section class="section-padding" id="movies">
-        <h2 class="section-title animate-on-scroll">Recent Releases</h2>
+        <h2 class="section-title animate-on-scroll" data-ro="Lansări Recente">Recent Releases</h2>
         <div class="movie-grid">
-            
-            <a href="Pages/BloodStory.html" class="movie-card animate-on-scroll">
+            <a href="Stories/BloodStory" class="movie-card animate-on-scroll">
                 <div class="movie-thumbnail">
                     <img src="https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?auto=format&fit=crop&w=600&q=80" alt="Blood Story">
                     <video src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720497/Sange%20Story%20Web%20Optimized/EP1_weboptimized_bl8nnh.mp4" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
                 </div>
                 <div class="movie-info">
-                    <h3 class="movie-title">Blood Story</h3><p class="movie-genre">Action / Dystopian</p>
+                    <h3 class="movie-title" data-ro="Sânge de Înger">Blood Story</h3><p class="movie-genre" data-ro="Dark Romance / Mister">Action / Dystopian</p>
                 </div>
             </a>
-
-            <a href="Pages/SecurityCamera.html" class="movie-card animate-on-scroll">
+            
+            <a href="Stories/SecurityCamera" class="movie-card animate-on-scroll">
                 <div class="movie-thumbnail">
                     <img src="https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?auto=format&fit=crop&w=600&q=80" alt="Security Camera">
                     <video src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720503/Story%201%20WebOptimized/EP1_WebOptimized_hqeoqp.mp4" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
                 </div>
                 <div class="movie-info">
-                    <h3 class="movie-title">Security Camera</h3><p class="movie-genre">Mystery / Thriller</p>
+                    <h3 class="movie-title" data-ro="Tura de Noapte">Security Camera</h3><p class="movie-genre" data-ro="Horror / Suspans">Mystery / Thriller</p>
                 </div>
             </a>
-
-            <a href="Pages/ThrillerStory.html" class="movie-card animate-on-scroll">
+            
+            <a href="Stories/ThrillerStory" class="movie-card animate-on-scroll">
                 <div class="movie-thumbnail">
                     <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Thriller Story">
                     <video src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720507/Thriller%20Ro%20Web%20Optimized/Ep1_weboptimized_arwve6.mp4" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
                 </div>
                 <div class="movie-info">
-                    <h3 class="movie-title">Thriller Story</h3><p class="movie-genre">Cyberpunk / Sci-Fi</p>
+                    <h3 class="movie-title" data-ro="Povestea Thriller">Thriller Story</h3><p class="movie-genre" data-ro="Cyberpunk / Sci-Fi">Cyberpunk / Sci-Fi</p>
                 </div>
             </a>
-
         </div>
     </section>
 
     <section class="section-padding" id="testimonials">
-        <h2 class="section-title animate-on-scroll">Viewer Reviews</h2>
+        <h2 class="section-title animate-on-scroll" data-ro="Recenziile Spectatorilor">Viewer Reviews</h2>
         <div class="testimonials-grid">
             <div class="testimonial-card animate-on-scroll">
                 <span class="quote-icon">"</span>
-                <p class="testimonial-text">Absolutely mind-blowing. The visual fidelity and storytelling generated by NexCinema models rival major Hollywood productions.</p>
+                <p class="testimonial-text" data-ro="Absolut uluitor. Fidelitatea vizuală și povestirile generate de modelele NexCinema rivalizează cu marile producții de la Hollywood.">Absolutely mind-blowing. The visual fidelity and storytelling generated by NexCinema models rival major Hollywood productions.</p>
                 <div class="client-info">
                     <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80" alt="John Doe" class="client-avatar">
-                    <div class="client-details"><h4>John Doe</h4><p>Tech Reviewer</p></div>
+                    <div class="client-details"><h4>John Doe</h4><p data-ro="Recenzor Tech">Tech Reviewer</p></div>
                 </div>
             </div>
             <div class="testimonial-card animate-on-scroll">
                 <span class="quote-icon">"</span>
-                <p class="testimonial-text">I never thought an algorithm could make me feel this kind of emotion. The dramatic pacing in the thriller series is surprisingly human.</p>
+                <p class="testimonial-text" data-ro="Nu am crezut niciodată că un algoritm mă poate face să simt o asemenea emoție. Ritmul dramatic din seria thriller este surprinzător de uman.">I never thought an algorithm could make me feel this kind of emotion. The dramatic pacing in the thriller series is surprisingly human.</p>
                 <div class="client-info">
                     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Alice Smith" class="client-avatar">
-                    <div class="client-details"><h4>Alice Smith</h4><p>Film Enthusiast</p></div>
+                    <div class="client-details"><h4>Alice Smith</h4><p data-ro="Pasionată de Filme">Film Enthusiast</p></div>
                 </div>
             </div>
             <div class="testimonial-card animate-on-scroll">
                 <span class="quote-icon">"</span>
-                <p class="testimonial-text">A glimpse into the future of entertainment. The sci-fi environments and cyberpunk aesthetics are rendered with impossible detail.</p>
+                <p class="testimonial-text" data-ro="O privire în viitorul divertismentului. Mediile sci-fi și estetica cyberpunk sunt redate cu un detaliu imposibil.">A glimpse into the future of entertainment. The sci-fi environments and cyberpunk aesthetics are rendered with impossible detail.</p>
                 <div class="client-info">
                     <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=150&q=80" alt="Marcus Reed" class="client-avatar">
-                    <div class="client-details"><h4>Marcus Reed</h4><p>Digital Artist</p></div>
+                    <div class="client-details"><h4>Marcus Reed</h4><p data-ro="Artist Digital">Digital Artist</p></div>
                 </div>
             </div>
         </div>
@@ -236,35 +222,44 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <a href="#" class="logo">Nex<span>Cinema</span></a>
-                <p>Revolutionizing the way you experience cinematography through the power of artificial intelligence.</p>
+                <p data-ro="Revoluționăm modul în care experimentezi cinematografia prin puterea inteligenței artificiale.">Revolutionizing the way you experience cinematography through the power of artificial intelligence.</p>
             </div>
             <div class="footer-links">
-                <h3>Navigation</h3>
-                <a href="#home">Home</a><a href="#features">Why Us?</a><a href="#movies">Movie Collection</a>
+                <h3 data-ro="Navigare">Navigation</h3>
+                <a href="/#home" data-ro="Acasă">Home</a>
+                <a href="/#features" data-ro="De ce noi?">Why Us?</a>
+                <a href="/#movies" data-ro="Colecție Filme">Movie Collection</a>
             </div>
             <div class="footer-social">
-                <h3>Social Media</h3>
+                <h3 data-ro="Rețele Sociale">Social Media</h3>
                 <a href="#">Instagram</a><a href="#">Twitter (X)</a><a href="#">YouTube</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 NexCinema. All rights reserved.</p>
+            <p data-ro="&copy; 2026 NexCinema. Toate drepturile rezervate.">&copy; 2026 NexCinema. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const userLang = navigator.language || navigator.userLanguage;
+            const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            
+            if (userLang.toLowerCase().includes('ro') || timeZone === 'Europe/Bucharest' || timeZone === 'Europe/Chisinau') {
+                document.querySelectorAll('[data-ro]').forEach(function(el) {
+                    el.innerHTML = el.getAttribute('data-ro');
+                });
+            }
+        });
+
         $(document).ready(function(){
             $('.hero-slider').slick({ dots: true, infinite: true, speed: 800, fade: true, cssEase: 'linear', slidesToShow: 1, adaptiveHeight: true, autoplay: false, arrows: false, pauseOnHover: true });
             
             $('.hero-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
                 $('.hero-media video').each(function() {
-                    if(!this.paused) {
-                        this.pause();
-                        this.removeAttribute('controls');
-                        $(this).siblings('.play-overlay').css('display', '');
-                    }
+                    if(!this.paused) { this.pause(); this.removeAttribute('controls'); $(this).siblings('.play-overlay').css('display', ''); }
                 });
             });
 
@@ -272,21 +267,14 @@
                 var video = $(this).find('video').get(0);
                 var overlay = $(this).find('.play-overlay');
                 if (video) {
-                    if (video.paused) {
-                        video.play();
-                        video.setAttribute('controls', 'controls');
-                        overlay.css('display', 'none');
-                    }
+                    if (video.paused) { video.play(); video.setAttribute('controls', 'controls'); overlay.css('display', 'none'); }
                 }
             });
         });
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
             });
         }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
