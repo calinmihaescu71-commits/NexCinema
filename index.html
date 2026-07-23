@@ -11,14 +11,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 
     <style>
-        :root {
-            --bg-color: #0d0d0d;
-            --text-color: #f5f5f5;
-            --accent-color: #7b61ff; 
-            --accent-hover: #634be3;
-            --card-bg: #1a1a1a;
-        }
-
+        :root { --bg-color: #0d0d0d; --text-color: #f5f5f5; --accent-color: #7b61ff; --accent-hover: #634be3; --card-bg: #1a1a1a; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; overflow-x: hidden; }
 
@@ -37,7 +30,6 @@
         .hero-media { flex: 1; position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); max-width: 600px; background: #000; cursor: pointer; }
         .hero-media video { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
         
-        /* HOVER PLAY BUTTON DESIGN */
         .play-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.8); width: 70px; height: 70px; background: rgba(123, 97, 255, 0.85); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease; z-index: 10; pointer-events: none; box-shadow: 0 0 20px rgba(123, 97, 255, 0.4); }
         .hero-media:hover .play-overlay { opacity: 1; transform: translate(-50%, -50%) scale(1); }
         .play-overlay::after { content: ''; border-style: solid; border-width: 12px 0 12px 18px; border-color: transparent transparent transparent white; margin-left: 6px; }
@@ -118,7 +110,7 @@
                         <div class="play-overlay"></div>
                     </div>
                     <div class="hero-content animate-on-scroll">
-                        <h1>Blood <span>Story</span> - The Origin</h1>
+                        <h1>Blood <span>Story</span></h1>
                         <p>A rogue agent uncovers a brutal conspiracy that runs through the very veins of a dystopian metropolis. The ultimate fight for survival begins in the shadows.</p>
                         <a href="Pages/BloodStory.html" class="btn">Watch Full Series</a>
                     </div>
@@ -132,7 +124,7 @@
                         <div class="play-overlay"></div>
                     </div>
                     <div class="hero-content animate-on-scroll">
-                        <h1>Security <span>Camera</span> - Shift 4</h1>
+                        <h1>Security <span>Camera</span></h1>
                         <p>Every angle is watched. When a late-night security guard spots a terrifying anomaly on camera 4, he is dragged into a reality he cannot escape.</p>
                         <a href="Pages/SecurityCamera.html" class="btn">Watch Full Series</a>
                     </div>
@@ -146,7 +138,7 @@
                         <div class="play-overlay"></div>
                     </div>
                     <div class="hero-content animate-on-scroll">
-                        <h1>Thriller <span>Story</span> - Neural Grid</h1>
+                        <h1>Thriller <span>Story</span></h1>
                         <p>In a city controlled by a rogue AI, one hacker finds a legacy code capable of shutting down the entire system. The global race against time has officially started.</p>
                         <a href="Pages/ThrillerStory.html" class="btn">Watch Full Series</a>
                     </div>
@@ -176,6 +168,7 @@
     <section class="section-padding" id="movies">
         <h2 class="section-title animate-on-scroll">Recent Releases</h2>
         <div class="movie-grid">
+            
             <a href="Pages/BloodStory.html" class="movie-card animate-on-scroll">
                 <div class="movie-thumbnail">
                     <img src="https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?auto=format&fit=crop&w=600&q=80" alt="Blood Story">
@@ -206,15 +199,6 @@
                 </div>
             </a>
 
-            <a href="Pages/BloodStory.html" class="movie-card animate-on-scroll">
-                <div class="movie-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80" alt="Blood Story Ep 2">
-                    <video src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720497/Sange%20Story%20Web%20Optimized/EP2_weboptimized_ruhbim.mp4" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
-                </div>
-                <div class="movie-info">
-                    <h3 class="movie-title">Blood Story - Ep 2</h3><p class="movie-genre">Action / Dystopian</p>
-                </div>
-            </a>
         </div>
     </section>
 

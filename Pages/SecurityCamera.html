@@ -33,7 +33,7 @@
         .episode-card:hover { transform: translateY(-8px); border-color: rgba(123, 97, 255, 0.4); }
 
         .episode-media { position: relative; width: 100%; aspect-ratio: 16/9; background-color: #000; cursor: pointer; overflow: hidden; }
-        .episode-video { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .episode-video { width: 100%; height: 100%; object-fit: contain; display: block; }
         
         .play-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.8); width: 60px; height: 60px; background: rgba(123, 97, 255, 0.85); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease; pointer-events: none; z-index: 10; box-shadow: 0 0 20px rgba(123, 97, 255, 0.4); }
         .episode-media:hover .play-overlay { opacity: 1; transform: translate(-50%, -50%) scale(1); }
@@ -86,6 +86,38 @@
                 <div class="episode-info"><h3><span>EP 2</span> Blind Spots</h3><p>As the footage degrades, the line between the physical world and the digital haunting begins to blur entirely.</p></div>
             </div>
 
+            <div class="episode-card animate-on-scroll">
+                <div class="episode-media">
+                    <video class="episode-video" src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784823798/EP3_WebOptimized_iog8ks.mp4" poster="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" playsinline preload="metadata"></video>
+                    <div class="play-overlay"></div>
+                </div>
+                <div class="episode-info"><h3><span>EP 3</span> Static</h3><p>The signal is hijacked. The true nature of the facility is finally revealed.</p></div>
+            </div>
+
+            <div class="episode-card animate-on-scroll">
+                <div class="episode-media">
+                    <video class="episode-video" src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784823800/EP4_WebOptimized_mftl00.mp4" poster="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" playsinline preload="metadata"></video>
+                    <div class="play-overlay"></div>
+                </div>
+                <div class="episode-info"><h3><span>EP 4</span> The Loop</h3><p>He tries to escape, only to realize the corridors are changing shape.</p></div>
+            </div>
+
+            <div class="episode-card animate-on-scroll">
+                <div class="episode-media">
+                    <video class="episode-video" src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784823795/EP5_WebOptimized_ldmpp6.mp4" poster="https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?auto=format&fit=crop&w=800&q=80" playsinline preload="metadata"></video>
+                    <div class="play-overlay"></div>
+                </div>
+                <div class="episode-info"><h3><span>EP 5</span> Shift 5</h3><p>Another guard arrives for the next shift, bringing answers.</p></div>
+            </div>
+
+            <div class="episode-card animate-on-scroll">
+                <div class="episode-media">
+                    <video class="episode-video" src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784823793/EP6_WebOptimized_mce85f.mp4" poster="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80" playsinline preload="metadata"></video>
+                    <div class="play-overlay"></div>
+                </div>
+                <div class="episode-info"><h3><span>EP 6</span> Power Down</h3><p>The final hour. The lights go out, and the cameras stop rolling.</p></div>
+            </div>
+
         </div>
     </main>
 
@@ -97,14 +129,17 @@
         let isUnlocked = false;
         const medias = document.querySelectorAll('.episode-media');
         
-        medias.forEach(media => {
+        medias.forEach((media, index) => {
             media.addEventListener('click', function() {
                 const video = this.querySelector('video');
                 const overlay = this.querySelector('.play-overlay');
 
-                if (!isUnlocked) {
+                if (index >= 2 && !isUnlocked) {
                     if (typeof og_load === 'function') {
                         og_load();
+                        isUnlocked = true;
+                    } else {
+                        console.error("OGAds locker nu a putut fi incarcat.");
                         isUnlocked = true;
                     }
                 } else {

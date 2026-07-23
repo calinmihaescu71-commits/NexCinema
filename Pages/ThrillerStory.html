@@ -33,7 +33,7 @@
         .episode-card:hover { transform: translateY(-8px); border-color: rgba(123, 97, 255, 0.4); }
 
         .episode-media { position: relative; width: 100%; aspect-ratio: 16/9; background-color: #000; cursor: pointer; overflow: hidden; }
-        .episode-video { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .episode-video { width: 100%; height: 100%; object-fit: contain; display: block; }
         
         .play-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.8); width: 60px; height: 60px; background: rgba(123, 97, 255, 0.85); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease; pointer-events: none; z-index: 10; box-shadow: 0 0 20px rgba(123, 97, 255, 0.4); }
         .episode-media:hover .play-overlay { opacity: 1; transform: translate(-50%, -50%) scale(1); }
