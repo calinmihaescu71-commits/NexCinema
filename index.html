@@ -14,7 +14,7 @@
       gtag('config', 'G-Y5YWBYZ80M');
     </script>
 
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <style>
@@ -57,8 +57,10 @@
         .movie-card { background-color: var(--card-bg); border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, border-color 0.3s ease; text-decoration: none; display: block; border: 1px solid rgba(255, 255, 255, 0.05); }
         .movie-card:hover { transform: translateY(-8px); border-color: rgba(123, 97, 255, 0.4); }
         .movie-thumbnail { width: 100%; position: relative; aspect-ratio: 16/9; background-color: #2a2a2a; overflow: hidden; }
-        .movie-thumbnail video, .movie-thumbnail img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; position: absolute; top: 0; left: 0; }
-        .movie-card:hover .movie-thumbnail video, .movie-card:hover .movie-thumbnail img { transform: scale(1.05); }
+        .movie-thumbnail img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; position: absolute; top: 0; left: 0; z-index: 1; }
+        .movie-thumbnail video { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 2; opacity: 0; transition: opacity 0.3s ease; }
+        .movie-card:hover .movie-thumbnail video { opacity: 1; }
+        .movie-card:hover .movie-thumbnail img { transform: scale(1.05); }
         .movie-info { padding: 1.2rem; }
         .movie-title { font-size: 1.2rem; margin-bottom: 0.3rem; color: var(--text-color); font-weight: 700; }
         .movie-genre { color: var(--accent-color); font-size: 0.85rem; }
@@ -97,10 +99,15 @@
 
     <header id="home">
         <div class="hero-slider">
+            <!-- Blood Story -->
             <div class="hero-slide">
                 <div class="hero-layout">
                     <div class="hero-media animate-on-scroll">
-                        <video src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720497/Sange%20Story%20Web%20Optimized/EP1_weboptimized_bl8nnh.mp4" poster="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" playsinline preload="metadata"></video>
+                        <video src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1785101856/EP1_EN__WebOptimized_u5gmyl.mp4" 
+                               data-ro-src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720497/Sange%20Story%20Web%20Optimized/EP1_weboptimized_bl8nnh.mp4"
+                               poster="https://res.cloudinary.com/dkqmkjvct/video/upload/v1785101856/EP1_EN__WebOptimized_u5gmyl.jpg"
+                               data-ro-poster="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720497/Sange%20Story%20Web%20Optimized/EP1_weboptimized_bl8nnh.jpg"
+                               playsinline preload="metadata"></video>
                         <div class="play-overlay"></div>
                     </div>
                     <div class="hero-content animate-on-scroll">
@@ -111,10 +118,15 @@
                 </div>
             </div>
 
+            <!-- Security Camera -->
             <div class="hero-slide">
                 <div class="hero-layout">
                     <div class="hero-media animate-on-scroll">
-                        <video src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720503/Story%201%20WebOptimized/EP1_WebOptimized_hqeoqp.mp4" poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" playsinline preload="metadata"></video>
+                        <video src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1785102207/EP1_EN__WebOptimized_vurwwr.mp4" 
+                               data-ro-src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720503/Story%201%20WebOptimized/EP1_WebOptimized_hqeoqp.mp4"
+                               poster="https://res.cloudinary.com/dkqmkjvct/video/upload/v1785102207/EP1_EN__WebOptimized_vurwwr.jpg"
+                               data-ro-poster="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720503/Story%201%20WebOptimized/EP1_WebOptimized_hqeoqp.jpg"
+                               playsinline preload="metadata"></video>
                         <div class="play-overlay"></div>
                     </div>
                     <div class="hero-content animate-on-scroll">
@@ -125,10 +137,15 @@
                 </div>
             </div>
 
+            <!-- Thriller Story -->
             <div class="hero-slide">
                 <div class="hero-layout">
                     <div class="hero-media animate-on-scroll">
-                        <video src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720507/Thriller%20Ro%20Web%20Optimized/Ep1_weboptimized_arwve6.mp4" poster="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" playsinline preload="metadata"></video>
+                        <video src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1785101328/P1_EN__WebOptimized_spp2vd.mp4" 
+                               data-ro-src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720507/Thriller%20Ro%20Web%20Optimized/Ep1_weboptimized_arwve6.mp4"
+                               poster="https://res.cloudinary.com/dkqmkjvct/video/upload/v1785101328/P1_EN__WebOptimized_spp2vd.jpg"
+                               data-ro-poster="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720507/Thriller%20Ro%20Web%20Optimized/Ep1_weboptimized_arwve6.jpg"
+                               playsinline preload="metadata"></video>
                         <div class="play-overlay"></div>
                     </div>
                     <div class="hero-content animate-on-scroll">
@@ -162,10 +179,14 @@
     <section class="section-padding" id="movies">
         <h2 class="section-title animate-on-scroll" data-ro="Lansări Recente">Recent Releases</h2>
         <div class="movie-grid">
+            
             <a href="Stories/BloodStory" class="movie-card animate-on-scroll">
                 <div class="movie-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?auto=format&fit=crop&w=600&q=80" alt="Blood Story">
-                    <video src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720497/Sange%20Story%20Web%20Optimized/EP1_weboptimized_bl8nnh.mp4" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
+                    <!-- Am inlocuit imaginile Unsplash cu extrageri directe de cadre din video-ul tau de pe Cloudinary (din mp4 in jpg) -->
+                    <img src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1785101856/EP1_EN__WebOptimized_u5gmyl.jpg" 
+                         data-ro-src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720497/Sange%20Story%20Web%20Optimized/EP1_weboptimized_bl8nnh.jpg" alt="Blood Story">
+                    <video src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1785101856/EP1_EN__WebOptimized_u5gmyl.mp4" 
+                           data-ro-src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720497/Sange%20Story%20Web%20Optimized/EP1_weboptimized_bl8nnh.mp4" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
                 </div>
                 <div class="movie-info">
                     <h3 class="movie-title" data-ro="Sânge de Înger">Blood Story</h3><p class="movie-genre" data-ro="Dark Romance / Mister">Action / Dystopian</p>
@@ -174,8 +195,10 @@
             
             <a href="Stories/SecurityCamera" class="movie-card animate-on-scroll">
                 <div class="movie-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?auto=format&fit=crop&w=600&q=80" alt="Security Camera">
-                    <video src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720503/Story%201%20WebOptimized/EP1_WebOptimized_hqeoqp.mp4" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
+                    <img src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1785102207/EP1_EN__WebOptimized_vurwwr.jpg" 
+                         data-ro-src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720503/Story%201%20WebOptimized/EP1_WebOptimized_hqeoqp.jpg" alt="Security Camera">
+                    <video src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1785102207/EP1_EN__WebOptimized_vurwwr.mp4" 
+                           data-ro-src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720503/Story%201%20WebOptimized/EP1_WebOptimized_hqeoqp.mp4" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
                 </div>
                 <div class="movie-info">
                     <h3 class="movie-title" data-ro="Tura de Noapte">Security Camera</h3><p class="movie-genre" data-ro="Horror / Suspans">Mystery / Thriller</p>
@@ -184,8 +207,10 @@
             
             <a href="Stories/ThrillerStory" class="movie-card animate-on-scroll">
                 <div class="movie-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Thriller Story">
-                    <video src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720507/Thriller%20Ro%20Web%20Optimized/Ep1_weboptimized_arwve6.mp4" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
+                    <img src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1785101328/P1_EN__WebOptimized_spp2vd.jpg" 
+                         data-ro-src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720507/Thriller%20Ro%20Web%20Optimized/Ep1_weboptimized_arwve6.jpg" alt="Thriller Story">
+                    <video src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1785101328/P1_EN__WebOptimized_spp2vd.mp4" 
+                           data-ro-src="https://res.cloudinary.com/dkqmkjvct/video/upload/v1784720507/Thriller%20Ro%20Web%20Optimized/Ep1_weboptimized_arwve6.mp4" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
                 </div>
                 <div class="movie-info">
                     <h3 class="movie-title" data-ro="Povestea Thriller">Thriller Story</h3><p class="movie-genre" data-ro="Cyberpunk / Sci-Fi">Cyberpunk / Sci-Fi</p>
@@ -249,33 +274,32 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const userLang = navigator.language || navigator.userLanguage;
-            const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-            
-            if (userLang.toLowerCase().includes('ro') || timeZone === 'Europe/Bucharest' || timeZone === 'Europe/Chisinau') {
-                document.querySelectorAll('[data-ro]').forEach(function(el) {
-                    el.innerHTML = el.getAttribute('data-ro');
-                });
-            }
+        // Logica de traducere si schimbare dinamica a videoclipurilor
+        const userLang = navigator.language || navigator.userLanguage;
+        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        
+        if (userLang.toLowerCase().includes('ro') || timeZone === 'Europe/Bucharest' || timeZone === 'Europe/Chisinau') {
+            document.querySelectorAll('[data-ro]').forEach(el => el.innerHTML = el.getAttribute('data-ro'));
+            document.querySelectorAll('video[data-ro-src]').forEach(video => { video.src = video.getAttribute('data-ro-src'); video.load(); });
+            document.querySelectorAll('video[data-ro-poster]').forEach(video => video.setAttribute('poster', video.getAttribute('data-ro-poster')));
+            document.querySelectorAll('img[data-ro-src]').forEach(img => img.src = img.getAttribute('data-ro-src'));
+        }
+
+        // Initializeaza elementele
+        $('.hero-slider').slick({ dots: true, infinite: true, speed: 800, fade: true, cssEase: 'linear', slidesToShow: 1, adaptiveHeight: true, autoplay: false, arrows: false, pauseOnHover: true });
+        
+        $('.hero-slider').on('beforeChange', (event, slick, currentSlide, nextSlide) => {
+            $('.hero-media video').each(function() {
+                if(!this.paused) { this.pause(); this.removeAttribute('controls'); $(this).siblings('.play-overlay').css('display', ''); }
+            });
         });
 
-        $(document).ready(function(){
-            $('.hero-slider').slick({ dots: true, infinite: true, speed: 800, fade: true, cssEase: 'linear', slidesToShow: 1, adaptiveHeight: true, autoplay: false, arrows: false, pauseOnHover: true });
-            
-            $('.hero-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-                $('.hero-media video').each(function() {
-                    if(!this.paused) { this.pause(); this.removeAttribute('controls'); $(this).siblings('.play-overlay').css('display', ''); }
-                });
-            });
-
-            $(document).on('click', '.hero-media', function() {
-                var video = $(this).find('video').get(0);
-                var overlay = $(this).find('.play-overlay');
-                if (video) {
-                    if (video.paused) { video.play(); video.setAttribute('controls', 'controls'); overlay.css('display', 'none'); }
-                }
-            });
+        $(document).on('click', '.hero-media', function() {
+            var video = $(this).find('video').get(0);
+            var overlay = $(this).find('.play-overlay');
+            if (video) {
+                if (video.paused) { video.play(); video.setAttribute('controls', 'controls'); overlay.css('display', 'none'); }
+            }
         });
 
         const observer = new IntersectionObserver((entries) => {
